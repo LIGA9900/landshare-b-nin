@@ -2,6 +2,11 @@
 // Dashboard.jsx — Espace Investisseur · LandShare Bénin
 // Design : Sidebar premium · Widgets animés · Graphiques · Niveau startup
 // ═══════════════════════════════════════════════════════════════════
+
+import NotificationsSection from './NotificationsSection'
+import DocumentsSection from './DocumentsSection'
+import HistoriqueSection from './HistoriqueSection'
+import PortefeuilleSection from './PortefeuilleSection'
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
@@ -985,7 +990,13 @@ function AvailableTerrain() {
 // ═══════════════════════════════════════════════════════════════════
 // CONTENU PRINCIPAL selon l'onglet actif
 // ═══════════════════════════════════════════════════════════════════
-function MainContent({ active }) {
+function MainContent({ active, isMobile }) {
+
+  if (active === 'terrains')     return <TerrainsSection isMobile={isMobile} />
+  if (active === 'portefeuille') return <PortefeuilleSection isMobile={isMobile} />
+  if (active === 'historique') return <HistoriqueSection isMobile={isMobile} />
+  if (active === 'documents') return <DocumentsSection isMobile={isMobile} />
+  if (active === 'notifications') return <NotificationsSection isMobile={isMobile} />
   if (active === 'dashboard') {
     return (
       <div style={{ display: 'flex', gap: 20, height: '100%' }}>
@@ -1087,6 +1098,13 @@ function MainContent({ active }) {
 export default function Dashboard() {
   useFonts()
   const [active,    setActive]    = useState('dashboard')
+  // ← Ajouter ces lignes
+const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+useEffect(() => {
+  const handler = () => setIsMobile(window.innerWidth <= 768)
+  window.addEventListener('resize', handler)
+  return () => window.removeEventListener('resize', handler)
+}, [])
   const [collapsed, setCollapsed] = useState(false)
   const [notifOpen, setNotifOpen] = useState(false)
 
@@ -1121,7 +1139,7 @@ export default function Dashboard() {
         <main style={{
           flex: 1, overflow: 'auto', padding: 20,
         }}>
-          <MainContent active={active} />
+          <MainContent active={active} isMobile={isMobile} />
         </main>
       </div>
 

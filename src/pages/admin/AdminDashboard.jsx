@@ -111,6 +111,47 @@ const alerts = [
   { id: 4, type: 'success', msg: 'Ouidah Historique a atteint 100% de financement' },
 ]
 
+const USERS_DATA = [
+  { id:1,  ref:'USR-241', name:'Aisha Koné',      email:'aisha.kone@email.com',   country:'🇫🇷 France',   sqm:15,  invested:225000, kyc:'validated', status:'active',    joined:'12 Oct 2025' },
+  { id:2,  ref:'USR-240', name:'Malick Fassinou',  email:'malick.f@gmail.com',     country:'🇧🇯 Bénin',    sqm:8,   invested:120000, kyc:'validated', status:'active',    joined:'10 Oct 2025' },
+  { id:3,  ref:'USR-239', name:'Mariama Diallo',   email:'mariama.d@yahoo.fr',     country:'🇧🇪 Belgique', sqm:0,   invested:0,      kyc:'pending',   status:'active',    joined:'08 Oct 2025' },
+  { id:4,  ref:'USR-238', name:'Ibrahim Touré',    email:'ibrahim.toure@pro.com',  country:'🇨🇦 Canada',   sqm:22,  invested:385000, kyc:'validated', status:'active',    joined:'05 Oct 2025' },
+  { id:5,  ref:'USR-237', name:'Sylvie Dossou',    email:'sylvie.d@hotmail.com',   country:'🇧🇯 Bénin',    sqm:5,   invested:75000,  kyc:'validated', status:'suspended', joined:'02 Oct 2025' },
+  { id:6,  ref:'USR-236', name:'Jean-Paul Koffi',  email:'jpkoffi@email.com',      country:'🇩🇪 Allemagne',sqm:30,  invested:510000, kyc:'validated', status:'active',    joined:'28 Sep 2025' },
+  { id:7,  ref:'USR-235', name:'Amina Soumaré',    email:'amina.s@outlook.com',    country:'🇫🇷 France',   sqm:0,   invested:0,      kyc:'rejected',  status:'active',    joined:'25 Sep 2025' },
+  { id:8,  ref:'USR-234', name:'Romaric Houénou',  email:'romaric.h@gmail.com',    country:'🇧🇯 Bénin',    sqm:12,  invested:180000, kyc:'validated', status:'active',    joined:'20 Sep 2025' },
+]
+
+const TERRAINS_DATA = [
+  { id:1, ref:'TRN-001', name:'Calavi Nord — Lot 12',       city:'Abomey-Calavi', totalSqm:1000, soldSqm:680,  price:15000, status:'published', investors:47, revenue:10200000, created:'01 Sep 2025' },
+  { id:2, ref:'TRN-002', name:'Fidjrossè Balnéaire',         city:'Cotonou',       totalSqm:500,  soldSqm:455,  price:35000, status:'published', investors:32, revenue:15925000, created:'15 Sep 2025' },
+  { id:3, ref:'TRN-003', name:'Porto-Novo Est — Zone Com.', city:'Porto-Novo',    totalSqm:1500, soldSqm:420,  price:8500,  status:'published', investors:28, revenue:3570000,  created:'20 Sep 2025' },
+  { id:4, ref:'TRN-004', name:'Parakou Nord — Lot B',        city:'Parakou',       totalSqm:800,  soldSqm:0,    price:12000, status:'draft',     investors:0,  revenue:0,        created:'25 Oct 2025' },
+  { id:5, ref:'TRN-005', name:'Ouidah Historique',            city:'Ouidah',        totalSqm:600,  soldSqm:600,  price:20000, status:'full',      investors:55, revenue:12000000, created:'01 Août 2025'},
+]
+
+const TRANSACTIONS_DATA = [
+  { id:1, ref:'LS-054', user:'Aisha Koné',     terrain:'Calavi Nord',       sqm:5,  amount:77250,  method:'MTN MoMo',   status:'confirmed', date:'03 Mai 2026', time:'14:32' },
+  { id:2, ref:'LS-053', user:'Romaric H.',      terrain:'Fidjrossè',         sqm:5,  amount:77250,  method:'Stripe',     status:'confirmed', date:'27 Oct 2025', time:'11:15' },
+  { id:3, ref:'LS-052', user:'Aïcha Traoré',    terrain:'Porto-Novo Est',    sqm:3,  amount:46500,  method:'MTN MoMo',   status:'pending',   date:'27 Oct 2025', time:'09:48' },
+  { id:4, ref:'LS-051', user:'Kevin Agossa',    terrain:'Parakou Nord',      sqm:8,  amount:68000,  method:'Moov Money', status:'confirmed', date:'26 Oct 2025', time:'16:22' },
+  { id:5, ref:'LS-050', user:'Sylvie Dossou',   terrain:'Calavi Nord',       sqm:15, amount:231750, method:'Stripe',     status:'failed',    date:'26 Oct 2025', time:'08:05' },
+  { id:6, ref:'LS-049', user:'Jean-Paul K.',    terrain:'Fidjrossè',         sqm:20, amount:309000, method:'Paystack',   status:'confirmed', date:'25 Oct 2025', time:'13:40' },
+  { id:7, ref:'LS-048', user:'Ibrahim Touré',   terrain:'Ouidah Historique', sqm:10, amount:154500, method:'MTN MoMo',   status:'confirmed', date:'24 Oct 2025', time:'10:18' },
+  { id:8, ref:'LS-047', user:'Amina Soumaré',   terrain:'Calavi Nord',       sqm:3,  amount:46350,  method:'Stripe',     status:'refunded',  date:'23 Oct 2025', time:'15:55' },
+]
+
+const KYC_DATA = [
+  { id:1, ref:'KYC-091', name:'Mariama Diallo',  email:'mariama.d@yahoo.fr',   country:'🇧🇪 Belgique', type:'Passeport',      submitted:'Il y a 2h',  status:'pending'   },
+  { id:2, ref:'KYC-090', name:'Ibrahim Touré',   email:'ibrahim.toure@pro.com', country:'🇨🇦 Canada',   type:'CNI',            submitted:'Il y a 5h',  status:'pending'   },
+  { id:3, ref:'KYC-089', name:'Fatou Sow',       email:'fatou.sow@gmail.com',   country:'🇫🇷 France',   type:'Titre de séjour',submitted:'Il y a 1j',  status:'pending'   },
+  { id:4, ref:'KYC-088', name:'Koffi Mensah',    email:'koffi.m@email.com',     country:'🇩🇪 Allemagne',type:'Passeport',      submitted:'Il y a 1j',  status:'pending'   },
+  { id:5, ref:'KYC-087', name:'Aminata Kouyaté', email:'aminata.k@outlook.com', country:'🇫🇷 France',   type:'Passeport',      submitted:'Il y a 1j',  status:'pending'   },
+  { id:6, ref:'KYC-086', name:'Aisha Koné',      email:'aisha.kone@email.com',  country:'🇫🇷 France',   type:'CNI',            submitted:'Il y a 3j',  status:'validated' },
+  { id:7, ref:'KYC-085', name:'Jean-Paul Koffi', email:'jpkoffi@email.com',     country:'🇩🇪 Allemagne',type:'Passeport',      submitted:'Il y a 4j',  status:'validated' },
+  { id:8, ref:'KYC-084', name:'Amina Soumaré',   email:'amina.s@outlook.com',   country:'🇫🇷 France',   type:'CNI',            submitted:'Il y a 5j',  status:'rejected'  },
+]
+
 // ═══════════════════════════════════════════════
 // STYLES GLOBAUX (tokens identiques Dashboard.jsx)
 // ═══════════════════════════════════════════════
@@ -945,6 +986,872 @@ function DashboardPage({ isMobile }) {
 // ═══════════════════════════════════════════════
 // PLACEHOLDER PAGE
 // ═══════════════════════════════════════════════
+// ── Configs statuts ────────────────────────────────────────────────
+const KYC_STYLE   = {
+  validated: { bg:'rgba(30,58,47,0.08)',   color:'#1E3A2F', label:'✓ Validé'     },
+  pending:   { bg:'rgba(184,151,42,0.1)',  color:'#8B6E1A', label:'⏳ En attente' },
+  rejected:  { bg:'rgba(192,57,43,0.08)', color:'#C0392B', label:'✗ Rejeté'     },
+}
+const USER_STATUS = {
+  active:    { bg:'rgba(30,58,47,0.08)',  color:'#1E3A2F', label:'Actif'    },
+  suspended: { bg:'rgba(192,57,43,0.08)',color:'#C0392B', label:'Suspendu' },
+}
+const TX_STATUS = {
+  confirmed: { bg:'rgba(30,58,47,0.08)',   color:'#1E3A2F', label:'✓ Confirmé'   },
+  pending:   { bg:'rgba(184,151,42,0.1)',  color:'#8B6E1A', label:'⏳ En attente' },
+  failed:    { bg:'rgba(192,57,43,0.08)', color:'#C0392B', label:'✗ Échoué'     },
+  refunded:  { bg:'rgba(100,116,139,0.08)',color:'#64748B', label:'↩ Remboursé'  },
+}
+const TX_METHOD = {
+  'MTN MoMo':   { bg:'#FFCC00', color:'#1A1A1A' },
+  'Moov Money': { bg:'#0056A2', color:'#fff'     },
+  'Stripe':     { bg:'#635BFF', color:'#fff'     },
+  'Paystack':   { bg:'#00C3F7', color:'#fff'     },
+}
+const TERRAIN_STATUS = {
+  published: { bg:'rgba(30,58,47,0.08)',   color:'#1E3A2F', label:'🟢 Publié'    },
+  draft:     { bg:'rgba(184,151,42,0.1)',  color:'#8B6E1A', label:'📝 Brouillon' },
+  full:      { bg:'rgba(30,58,47,0.15)',   color:'#1E3A2F', label:'✅ Complet'   },
+  archived:  { bg:'rgba(100,116,139,0.08)',color:'#64748B', label:'📦 Archivé'   },
+}
+
+// ── Bouton icône réutilisable ───────────────────────────────────────
+function IcoBtn({ icon, color = '#1E3A2F', bg = 'rgba(30,58,47,0.07)', title, onClick }) {
+  return (
+    <button title={title} onClick={onClick} style={{
+      width:28, height:28, borderRadius:7,
+      background:bg, border:`1px solid ${bg}`,
+      display:'flex', alignItems:'center', justifyContent:'center',
+      cursor:'pointer', color, transition:'all 0.15s',
+      flexShrink:0,
+    }}
+    onMouseEnter={e => e.currentTarget.style.opacity='0.75'}
+    onMouseLeave={e => e.currentTarget.style.opacity='1'}>
+      {icon}
+    </button>
+  )
+}
+
+// ── KPI card commune ────────────────────────────────────────────────
+function AdminKpi({ label, value, color }) {
+  return (
+    <div style={{
+      background:'#fff', borderRadius:12, padding:'14px 16px',
+      boxShadow:'0 1px 6px rgba(30,58,47,0.05)',
+      border:'1px solid rgba(30,58,47,0.05)',
+      borderTop:`3px solid ${color}`,
+    }}>
+      <p style={{ fontSize:'0.62rem', color:'#8C8278', margin:'0 0 4px',
+                   textTransform:'uppercase', letterSpacing:'0.06em' }}>
+        {label}
+      </p>
+      <p style={{ fontFamily:"'Playfair Display', serif",
+                   fontSize:'1.3rem', fontWeight:700, color:'#1A1A1A', margin:0 }}>
+        {value}
+      </p>
+    </div>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION UTILISATEURS
+// ─────────────────────────────────────────────────────────────────
+function UsersPage() {
+  const [search,     setSearch]     = useState('')
+  const [filterKyc,  setFilterKyc]  = useState('all')
+  const [filterStat, setFilterStat] = useState('all')
+  const [users,      setUsers]       = useState(USERS_DATA)
+
+  const filtered = users.filter(u => {
+    const q = search.toLowerCase()
+    return (u.name.toLowerCase().includes(q) || u.email.toLowerCase().includes(q) || u.ref.toLowerCase().includes(q))
+      && (filterKyc  === 'all' || u.kyc    === filterKyc)
+      && (filterStat === 'all' || u.status === filterStat)
+  })
+
+  const toggleSuspend = id =>
+    setUsers(prev => prev.map(u => u.id === id ? { ...u, status: u.status==='active' ? 'suspended' : 'active' } : u))
+
+  const inputStyle = {
+    border:'none', background:'transparent', fontSize:'0.78rem',
+    color:'#4A3F35', outline:'none', width:'100%',
+    fontFamily:"'DM Sans', sans-serif",
+  }
+  const selectStyle = {
+    padding:'7px 12px', borderRadius:8, border:'1px solid rgba(30,58,47,0.12)',
+    background:'#fff', fontSize:'0.75rem', color:'#4A3F35',
+    cursor:'pointer', outline:'none', fontFamily:"'DM Sans', sans-serif",
+  }
+
+  return (
+    <div>
+      {/* Header section */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:18, flexWrap:'wrap', gap:10 }}>
+        <div>
+          <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize:'1.1rem', fontWeight:700, color:'#1A1A1A', margin:'0 0 2px' }}>
+            Gestion des Utilisateurs
+          </h2>
+          <p style={{ fontSize:'0.68rem', color:'#8C8278', margin:0 }}>{users.length} comptes enregistrés</p>
+        </div>
+        <button style={{
+          display:'flex', alignItems:'center', gap:6,
+          padding:'7px 14px', borderRadius:8,
+          background:'#1E3A2F', color:'#F5F0E8',
+          border:'none', fontSize:'0.75rem', fontWeight:600,
+          cursor:'pointer', fontFamily:"'DM Sans', sans-serif",
+        }}>
+          ⬇ Exporter CSV
+        </button>
+      </div>
+
+      {/* KPIs */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }}>
+        <AdminKpi label="Total"       value={users.length}                               color="#1E3A2F" />
+        <AdminKpi label="KYC validés" value={users.filter(u=>u.kyc==='validated').length} color="#1E3A2F" />
+        <AdminKpi label="En attente"  value={users.filter(u=>u.kyc==='pending').length}   color="#8B6E1A" />
+        <AdminKpi label="Suspendus"   value={users.filter(u=>u.status==='suspended').length} color="#C0392B" />
+      </div>
+
+      {/* Filtres */}
+      <div style={{ display:'flex', gap:10, marginBottom:16, flexWrap:'wrap', alignItems:'center' }}>
+        <div style={{
+          display:'flex', alignItems:'center', gap:6,
+          background:'#fff', border:'1px solid rgba(30,58,47,0.12)',
+          borderRadius:8, padding:'7px 12px', flex:1, minWidth:200,
+        }}>
+          <span style={{ fontSize:'0.8rem', color:'#8C8278' }}>🔍</span>
+          <input value={search} onChange={e=>setSearch(e.target.value)}
+                 placeholder="Rechercher un utilisateur..." style={inputStyle} />
+        </div>
+        <select value={filterKyc} onChange={e=>setFilterKyc(e.target.value)} style={selectStyle}>
+          <option value="all">Tous les KYC</option>
+          <option value="validated">KYC Validé</option>
+          <option value="pending">KYC En attente</option>
+          <option value="rejected">KYC Rejeté</option>
+        </select>
+        <select value={filterStat} onChange={e=>setFilterStat(e.target.value)} style={selectStyle}>
+          <option value="all">Tous les statuts</option>
+          <option value="active">Actif</option>
+          <option value="suspended">Suspendu</option>
+        </select>
+      </div>
+
+      {/* Tableau */}
+      <div style={{ background:'#fff', borderRadius:14, overflow:'hidden',
+                     boxShadow:'0 2px 10px rgba(30,58,47,0.05)',
+                     border:'1px solid rgba(30,58,47,0.06)' }}>
+        <div style={{ overflowX:'auto' }}>
+          <table style={{ width:'100%', borderCollapse:'collapse' }}>
+            <thead>
+              <tr style={{ background:'#FAFAF7' }}>
+                {['Réf.','Utilisateur','Pays','m²','Investi','KYC','Statut','Inscrit','Actions'].map(h => (
+                  <th key={h} style={{
+                    padding:'10px 14px', textAlign:'left',
+                    fontSize:'0.62rem', fontWeight:700, color:'#8C8278',
+                    textTransform:'uppercase', letterSpacing:'0.06em',
+                    borderBottom:'1px solid rgba(30,58,47,0.06)', whiteSpace:'nowrap',
+                  }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map(user => {
+                const kyc  = KYC_STYLE[user.kyc]    || KYC_STYLE.pending
+                const stat = USER_STATUS[user.status] || USER_STATUS.active
+                return (
+                  <tr key={user.id}
+                      onMouseEnter={e=>e.currentTarget.style.background='rgba(245,240,232,0.5)'}
+                      onMouseLeave={e=>e.currentTarget.style.background='transparent'}
+                      style={{ transition:'background 0.15s' }}>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ fontFamily:'monospace', fontSize:'0.72rem', color:'#1E3A2F', fontWeight:600 }}>{user.ref}</span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+                        <div style={{
+                          width:30, height:30, borderRadius:'50%',
+                          background:`hsl(${(user.id*47)%360},40%,35%)`,
+                          display:'flex', alignItems:'center', justifyContent:'center',
+                          fontSize:'0.6rem', fontWeight:700, color:'#F5F0E8', flexShrink:0,
+                        }}>
+                          {user.name.split(' ').map(n=>n[0]).join('').slice(0,2)}
+                        </div>
+                        <div>
+                          <p style={{ fontSize:'0.78rem', fontWeight:600, color:'#1A1A1A', margin:'0 0 1px' }}>{user.name}</p>
+                          <p style={{ fontSize:'0.65rem', color:'#8C8278', margin:0 }}>{user.email}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)', fontSize:'0.75rem', color:'#4A3F35' }}>{user.country}</td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)', fontSize:'0.78rem', fontWeight:700, color:'#1A1A1A' }}>{user.sqm} m²</td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ fontFamily:"'Playfair Display', serif", fontSize:'0.8rem', fontWeight:700, color:'#1E3A2F' }}>
+                        {user.invested.toLocaleString('fr-FR')} F
+                      </span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ padding:'3px 9px', borderRadius:20, background:kyc.bg, color:kyc.color, fontSize:'0.65rem', fontWeight:600, whiteSpace:'nowrap' }}>{kyc.label}</span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ padding:'3px 9px', borderRadius:20, background:stat.bg, color:stat.color, fontSize:'0.65rem', fontWeight:600 }}>{stat.label}</span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)', fontSize:'0.7rem', color:'#8C8278', whiteSpace:'nowrap' }}>{user.joined}</td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <div style={{ display:'flex', gap:5 }}>
+                        <IcoBtn icon="👁" title="Voir" />
+                        <IcoBtn
+                          icon={user.status==='active' ? '✕' : '✓'}
+                          title={user.status==='active' ? 'Suspendre' : 'Réactiver'}
+                          color={user.status==='active' ? '#C0392B' : '#1E3A2F'}
+                          bg={user.status==='active' ? 'rgba(192,57,43,0.08)' : 'rgba(30,58,47,0.08)'}
+                          onClick={() => toggleSuspend(user.id)}
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div style={{ padding:'10px 16px', borderTop:'1px solid rgba(30,58,47,0.06)',
+                       display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+          <p style={{ fontSize:'0.68rem', color:'#8C8278', margin:0 }}>
+            {filtered.length} sur {users.length} utilisateur(s)
+          </p>
+          <div style={{ display:'flex', gap:6 }}>
+            {['←','1','2','3','→'].map(p => (
+              <button key={p} style={{
+                width:28, height:28, borderRadius:6,
+                border:'1px solid rgba(30,58,47,0.12)',
+                background: p==='1' ? '#1E3A2F' : '#fff',
+                color: p==='1' ? '#F5F0E8' : '#4A3F35',
+                fontSize:'0.7rem', cursor:'pointer',
+                fontFamily:"'DM Sans', sans-serif",
+                display:'flex', alignItems:'center', justifyContent:'center',
+              }}>{p}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION TERRAINS
+// ─────────────────────────────────────────────────────────────────
+function TerrainsPage() {
+  const [search,   setSearch]   = useState('')
+  const [filter,   setFilter]   = useState('all')
+  const [terrains, setTerrains] = useState(TERRAINS_DATA)
+  const [showForm, setShowForm] = useState(false)
+
+  const filtered = terrains.filter(t => {
+    const q = search.toLowerCase()
+    return (t.name.toLowerCase().includes(q) || t.city.toLowerCase().includes(q) || t.ref.toLowerCase().includes(q))
+      && (filter === 'all' || t.status === filter)
+  })
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:18, flexWrap:'wrap', gap:10 }}>
+        <div>
+          <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize:'1.1rem', fontWeight:700, color:'#1A1A1A', margin:'0 0 2px' }}>
+            Gestion des Terrains
+          </h2>
+          <p style={{ fontSize:'0.68rem', color:'#8C8278', margin:0 }}>{terrains.length} terrains enregistrés</p>
+        </div>
+        <button onClick={() => setShowForm(true)} style={{
+          display:'flex', alignItems:'center', gap:6,
+          padding:'7px 14px', borderRadius:8,
+          background:'#1E3A2F', color:'#F5F0E8',
+          border:'none', fontSize:'0.75rem', fontWeight:600,
+          cursor:'pointer', fontFamily:"'DM Sans', sans-serif",
+        }}>
+          + Nouveau terrain
+        </button>
+      </div>
+
+      {/* KPIs */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }}>
+        <AdminKpi label="Total terrains"  value={terrains.length}                                  color="#1E3A2F" />
+        <AdminKpi label="Publiés"          value={terrains.filter(t=>t.status==='published').length} color="#1E3A2F" />
+        <AdminKpi label="m² total gérés"   value={terrains.reduce((s,t)=>s+t.totalSqm,0).toLocaleString()} color="#B8972A" />
+        <AdminKpi label="Revenus générés"  value={`${(terrains.reduce((s,t)=>s+t.revenue,0)/1000000).toFixed(1)}M F`} color="#1E3A2F" />
+      </div>
+
+      {/* Filtres */}
+      <div style={{ display:'flex', gap:10, marginBottom:16, flexWrap:'wrap' }}>
+        <div style={{
+          display:'flex', alignItems:'center', gap:6,
+          background:'#fff', border:'1px solid rgba(30,58,47,0.12)',
+          borderRadius:8, padding:'7px 12px', flex:1, minWidth:200,
+        }}>
+          <span style={{ fontSize:'0.8rem', color:'#8C8278' }}>🔍</span>
+          <input value={search} onChange={e=>setSearch(e.target.value)}
+                 placeholder="Rechercher un terrain..."
+                 style={{ border:'none', background:'transparent', fontSize:'0.78rem',
+                           color:'#4A3F35', outline:'none', width:'100%',
+                           fontFamily:"'DM Sans', sans-serif" }} />
+        </div>
+        <select value={filter} onChange={e=>setFilter(e.target.value)}
+                style={{ padding:'7px 12px', borderRadius:8, border:'1px solid rgba(30,58,47,0.12)',
+                          background:'#fff', fontSize:'0.75rem', color:'#4A3F35',
+                          cursor:'pointer', outline:'none', fontFamily:"'DM Sans', sans-serif" }}>
+          <option value="all">Tous les statuts</option>
+          <option value="published">Publiés</option>
+          <option value="draft">Brouillons</option>
+          <option value="full">Complets</option>
+        </select>
+      </div>
+
+      {/* Grille */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(290px,1fr))', gap:14 }}>
+        {filtered.map(terrain => {
+          const progress = Math.round((terrain.soldSqm / terrain.totalSqm) * 100)
+          const cfg = TERRAIN_STATUS[terrain.status] || TERRAIN_STATUS.draft
+          return (
+            <div key={terrain.id} style={{
+              background:'#fff', borderRadius:14, overflow:'hidden',
+              boxShadow:'0 2px 10px rgba(30,58,47,0.06)',
+              border:'1px solid rgba(30,58,47,0.06)', transition:'all 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.boxShadow='0 6px 24px rgba(30,58,47,0.12)'; e.currentTarget.style.transform='translateY(-2px)' }}
+            onMouseLeave={e => { e.currentTarget.style.boxShadow='0 2px 10px rgba(30,58,47,0.06)'; e.currentTarget.style.transform='translateY(0)' }}>
+              {/* Vignette */}
+              <div style={{
+                height:90, background:'linear-gradient(135deg, #1E3A2F, #2D5241, #B8972A)',
+                position:'relative', display:'flex', alignItems:'center', justifyContent:'center',
+              }}>
+                <span style={{ fontSize:'2rem', opacity:0.35 }}>🏡</span>
+                <span style={{
+                  position:'absolute', top:8, right:8,
+                  padding:'3px 9px', borderRadius:20, fontSize:'0.62rem', fontWeight:600,
+                  background:cfg.bg, color:cfg.color,
+                }}>{cfg.label}</span>
+              </div>
+              <div style={{ padding:'14px' }}>
+                <div style={{ display:'flex', justifyContent:'space-between', marginBottom:3 }}>
+                  <span style={{ fontFamily:'monospace', fontSize:'0.65rem', color:'#8C8278', fontWeight:600 }}>{terrain.ref}</span>
+                  <span style={{ fontSize:'0.65rem', color:'#8C8278' }}>📍 {terrain.city}</span>
+                </div>
+                <h3 style={{ fontFamily:"'Playfair Display', serif", fontSize:'0.88rem', fontWeight:700, color:'#1A1A1A', margin:'0 0 10px' }}>{terrain.name}</h3>
+                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:5, marginBottom:10 }}>
+                  {[
+                    { label:'m² total',      value:terrain.totalSqm.toLocaleString() },
+                    { label:'Prix/m²',        value:`${terrain.price.toLocaleString()} F` },
+                    { label:'Investisseurs',  value:terrain.investors },
+                  ].map(({ label, value }) => (
+                    <div key={label} style={{ background:'#F5F0E8', borderRadius:7, padding:'5px 7px', textAlign:'center' }}>
+                      <p style={{ fontSize:'0.56rem', color:'#8C8278', margin:'0 0 1px' }}>{label}</p>
+                      <p style={{ fontSize:'0.72rem', fontWeight:700, color:'#1A1A1A', margin:0 }}>{value}</p>
+                    </div>
+                  ))}
+                </div>
+                {/* Progress */}
+                <div style={{ marginBottom:10 }}>
+                  <div style={{ display:'flex', justifyContent:'space-between', fontSize:'0.62rem', color:'#8C8278', marginBottom:4 }}>
+                    <span>{terrain.soldSqm.toLocaleString()} m² vendus</span>
+                    <span style={{ fontWeight:600, color:'#1E3A2F' }}>{progress}%</span>
+                  </div>
+                  <div style={{ height:5, background:'#EDE6D6', borderRadius:3, overflow:'hidden' }}>
+                    <div style={{
+                      height:'100%', borderRadius:3, width:`${progress}%`,
+                      background: progress>=100 ? 'linear-gradient(90deg,#B8972A,#D4AD3A)' : 'linear-gradient(90deg,#1E3A2F,#3D6B53)',
+                    }} />
+                  </div>
+                </div>
+                {/* Actions */}
+                <div style={{ display:'flex', gap:6 }}>
+                  <button style={{
+                    flex:1, padding:'6px', borderRadius:8, border:'none',
+                    background:'rgba(30,58,47,0.07)', color:'#1E3A2F',
+                    fontSize:'0.7rem', fontWeight:600, cursor:'pointer',
+                    fontFamily:"'DM Sans', sans-serif",
+                  }}>👁 Voir</button>
+                  <button style={{
+                    flex:1, padding:'6px', borderRadius:8, border:'none',
+                    background:'rgba(30,58,47,0.07)', color:'#1E3A2F',
+                    fontSize:'0.7rem', fontWeight:600, cursor:'pointer',
+                    fontFamily:"'DM Sans', sans-serif",
+                  }}>✏ Éditer</button>
+                  {terrain.status === 'draft' && (
+                    <button style={{
+                      flex:1, padding:'6px', borderRadius:8, border:'none',
+                      background:'#1E3A2F', color:'#F5F0E8',
+                      fontSize:'0.7rem', fontWeight:600, cursor:'pointer',
+                      fontFamily:"'DM Sans', sans-serif",
+                    }}>✓ Publier</button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Modal nouveau terrain */}
+      {showForm && (
+        <div style={{
+          position:'fixed', inset:0, zIndex:200,
+          background:'rgba(0,0,0,0.4)', backdropFilter:'blur(4px)',
+          display:'flex', alignItems:'center', justifyContent:'center', padding:20,
+        }} onClick={() => setShowForm(false)}>
+          <div style={{
+            background:'#fff', borderRadius:16, padding:24, width:'100%', maxWidth:480,
+            boxShadow:'0 24px 60px rgba(0,0,0,0.2)',
+          }} onClick={e => e.stopPropagation()}>
+            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:20 }}>
+              <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize:'1.1rem', fontWeight:700, color:'#1A1A1A', margin:0 }}>
+                Nouveau terrain
+              </h2>
+              <button onClick={() => setShowForm(false)} style={{ background:'none', border:'none', cursor:'pointer', color:'#8C8278', fontSize:'1.1rem' }}>✕</button>
+            </div>
+            {[
+              { label:'Nom du terrain *',        placeholder:'Ex: Calavi Nord — Lot 15', type:'text'   },
+              { label:'Ville *',                  placeholder:'Ex: Abomey-Calavi',        type:'text'   },
+              { label:'Superficie totale (m²) *', placeholder:'Ex: 1000',                type:'number' },
+              { label:'Prix par m² (FCFA) *',     placeholder:'Ex: 15000',               type:'number' },
+            ].map(({ label, placeholder, type }) => (
+              <div key={label} style={{ marginBottom:12 }}>
+                <label style={{ display:'block', fontSize:'0.72rem', fontWeight:600, color:'#4A3F35', marginBottom:4 }}>{label}</label>
+                <input type={type} placeholder={placeholder} style={{
+                  width:'100%', padding:'9px 12px', borderRadius:9,
+                  border:'1.5px solid rgba(30,58,47,0.15)',
+                  fontSize:'0.82rem', color:'#1A1A1A', outline:'none',
+                  fontFamily:"'DM Sans', sans-serif",
+                  background:'rgba(245,240,232,0.4)', boxSizing:'border-box',
+                }} />
+              </div>
+            ))}
+            <div style={{ display:'flex', gap:8, marginTop:16 }}>
+              <button onClick={() => setShowForm(false)} style={{
+                flex:1, padding:'10px', borderRadius:9,
+                border:'1.5px solid rgba(30,58,47,0.2)', background:'transparent',
+                color:'#1E3A2F', fontSize:'0.8rem', fontWeight:600, cursor:'pointer',
+                fontFamily:"'DM Sans', sans-serif",
+              }}>Annuler</button>
+              <button style={{
+                flex:1, padding:'10px', borderRadius:9, border:'none',
+                background:'linear-gradient(135deg, #1E3A2F, #2D5241)',
+                color:'#F5F0E8', fontSize:'0.8rem', fontWeight:600, cursor:'pointer',
+                fontFamily:"'DM Sans', sans-serif",
+              }}>Créer le terrain</button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION TRANSACTIONS
+// ─────────────────────────────────────────────────────────────────
+function TransactionsPage() {
+  const [search,       setSearch]       = useState('')
+  const [filterStatus, setFilterStatus] = useState('all')
+  const [filterMethod, setFilterMethod] = useState('all')
+
+  const filtered = TRANSACTIONS_DATA.filter(tx => {
+    const q = search.toLowerCase()
+    return (tx.ref.toLowerCase().includes(q) || tx.user.toLowerCase().includes(q) || tx.terrain.toLowerCase().includes(q))
+      && (filterStatus === 'all' || tx.status === filterStatus)
+      && (filterMethod === 'all' || tx.method === filterMethod)
+  })
+
+  const totalRevenue = TRANSACTIONS_DATA.filter(tx=>tx.status==='confirmed').reduce((s,tx)=>s+tx.amount,0)
+
+  const selectStyle = {
+    padding:'7px 12px', borderRadius:8, border:'1px solid rgba(30,58,47,0.12)',
+    background:'#fff', fontSize:'0.75rem', color:'#4A3F35',
+    cursor:'pointer', outline:'none', fontFamily:"'DM Sans', sans-serif",
+  }
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:18, flexWrap:'wrap', gap:10 }}>
+        <div>
+          <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize:'1.1rem', fontWeight:700, color:'#1A1A1A', margin:'0 0 2px' }}>
+            Gestion des Transactions
+          </h2>
+          <p style={{ fontSize:'0.68rem', color:'#8C8278', margin:0 }}>{TRANSACTIONS_DATA.length} transactions enregistrées</p>
+        </div>
+        <button style={{
+          display:'flex', alignItems:'center', gap:6, padding:'7px 14px', borderRadius:8,
+          background:'#1E3A2F', color:'#F5F0E8', border:'none',
+          fontSize:'0.75rem', fontWeight:600, cursor:'pointer', fontFamily:"'DM Sans', sans-serif",
+        }}>⬇ Exporter CSV</button>
+      </div>
+
+      {/* KPIs */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }}>
+        <AdminKpi label="Revenus confirmés"  value={`${(totalRevenue/1000).toFixed(0)}K F`} color="#1E3A2F" />
+        <AdminKpi label="Total transactions" value={TRANSACTIONS_DATA.length}                color="#1E3A2F" />
+        <AdminKpi label="En attente"         value={TRANSACTIONS_DATA.filter(t=>t.status==='pending').length} color="#8B6E1A" />
+        <AdminKpi label="Échouées"           value={TRANSACTIONS_DATA.filter(t=>t.status==='failed').length}  color="#C0392B" />
+      </div>
+
+      {/* Filtres */}
+      <div style={{ display:'flex', gap:10, marginBottom:16, flexWrap:'wrap' }}>
+        <div style={{
+          display:'flex', alignItems:'center', gap:6,
+          background:'#fff', border:'1px solid rgba(30,58,47,0.12)',
+          borderRadius:8, padding:'7px 12px', flex:1, minWidth:200,
+        }}>
+          <span style={{ fontSize:'0.8rem', color:'#8C8278' }}>🔍</span>
+          <input value={search} onChange={e=>setSearch(e.target.value)}
+                 placeholder="Réf., utilisateur, terrain..."
+                 style={{ border:'none', background:'transparent', fontSize:'0.78rem',
+                           color:'#4A3F35', outline:'none', width:'100%',
+                           fontFamily:"'DM Sans', sans-serif" }} />
+        </div>
+        <select value={filterStatus} onChange={e=>setFilterStatus(e.target.value)} style={selectStyle}>
+          <option value="all">Tous les statuts</option>
+          <option value="confirmed">Confirmé</option>
+          <option value="pending">En attente</option>
+          <option value="failed">Échoué</option>
+          <option value="refunded">Remboursé</option>
+        </select>
+        <select value={filterMethod} onChange={e=>setFilterMethod(e.target.value)} style={selectStyle}>
+          <option value="all">Tous les modes</option>
+          <option value="MTN MoMo">MTN MoMo</option>
+          <option value="Moov Money">Moov Money</option>
+          <option value="Stripe">Stripe</option>
+          <option value="Paystack">Paystack</option>
+        </select>
+      </div>
+
+      {/* Tableau */}
+      <div style={{ background:'#fff', borderRadius:14, overflow:'hidden',
+                     boxShadow:'0 2px 10px rgba(30,58,47,0.05)', border:'1px solid rgba(30,58,47,0.06)' }}>
+        <div style={{ overflowX:'auto' }}>
+          <table style={{ width:'100%', borderCollapse:'collapse' }}>
+            <thead>
+              <tr style={{ background:'#FAFAF7' }}>
+                {['Réf.','Investisseur','Terrain','m²','Montant','Mode','Statut','Date','Actions'].map(h => (
+                  <th key={h} style={{
+                    padding:'10px 14px', textAlign:'left',
+                    fontSize:'0.62rem', fontWeight:700, color:'#8C8278',
+                    textTransform:'uppercase', letterSpacing:'0.06em',
+                    borderBottom:'1px solid rgba(30,58,47,0.06)', whiteSpace:'nowrap',
+                  }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map(tx => {
+                const sc = TX_STATUS[tx.status] || TX_STATUS.pending
+                const mc = TX_METHOD[tx.method] || { bg:'#E2E8F0', color:'#4A3F35' }
+                return (
+                  <tr key={tx.id}
+                      onMouseEnter={e=>e.currentTarget.style.background='rgba(245,240,232,0.5)'}
+                      onMouseLeave={e=>e.currentTarget.style.background='transparent'}
+                      style={{ transition:'background 0.15s', cursor:'pointer' }}>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ fontFamily:'monospace', fontSize:'0.72rem', color:'#1E3A2F', fontWeight:600 }}>{tx.ref}</span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <div style={{ display:'flex', alignItems:'center', gap:7 }}>
+                        <div style={{
+                          width:28, height:28, borderRadius:'50%',
+                          background:`hsl(${(tx.id*53)%360},40%,35%)`,
+                          display:'flex', alignItems:'center', justifyContent:'center',
+                          fontSize:'0.58rem', fontWeight:700, color:'#F5F0E8', flexShrink:0,
+                        }}>
+                          {tx.user.split(' ').map(n=>n[0]).join('').slice(0,2)}
+                        </div>
+                        <span style={{ fontSize:'0.78rem', fontWeight:600, color:'#1A1A1A' }}>{tx.user}</span>
+                      </div>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)', fontSize:'0.75rem', color:'#4A3F35' }}>{tx.terrain}</td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)', fontSize:'0.78rem', fontWeight:700, color:'#1A1A1A' }}>{tx.sqm} m²</td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ fontFamily:"'Playfair Display', serif", fontSize:'0.82rem', fontWeight:700, color:'#1E3A2F' }}>
+                        {tx.amount.toLocaleString('fr-FR')} F
+                      </span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ padding:'3px 9px', borderRadius:5, fontSize:'0.62rem', fontWeight:800, background:mc.bg, color:mc.color }}>{tx.method}</span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <span style={{ padding:'3px 9px', borderRadius:20, fontSize:'0.65rem', fontWeight:600, background:sc.bg, color:sc.color, whiteSpace:'nowrap' }}>{sc.label}</span>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <p style={{ fontSize:'0.7rem', color:'#4A3F35', margin:0, whiteSpace:'nowrap' }}>{tx.date}</p>
+                      <p style={{ fontSize:'0.62rem', color:'#8C8278', margin:0 }}>{tx.time}</p>
+                    </td>
+                    <td style={{ padding:'11px 14px', borderBottom:'1px solid rgba(30,58,47,0.04)' }}>
+                      <div style={{ display:'flex', gap:5 }}>
+                        <IcoBtn icon="👁" title="Voir détails" />
+                        {tx.status === 'pending' && <IcoBtn icon="✓" title="Valider" />}
+                        {tx.status === 'failed'  && <IcoBtn icon="⚠" title="Intervenir" color="#C0392B" bg="rgba(192,57,43,0.08)" />}
+                      </div>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div style={{ padding:'10px 16px', borderTop:'1px solid rgba(30,58,47,0.06)',
+                       display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+          <p style={{ fontSize:'0.68rem', color:'#8C8278', margin:0 }}>
+            {filtered.length} sur {TRANSACTIONS_DATA.length} transaction(s)
+          </p>
+          <div style={{ display:'flex', gap:6 }}>
+            {['←','1','2','→'].map(p => (
+              <button key={p} style={{
+                width:28, height:28, borderRadius:6,
+                border:'1px solid rgba(30,58,47,0.12)',
+                background: p==='1' ? '#1E3A2F' : '#fff',
+                color: p==='1' ? '#F5F0E8' : '#4A3F35',
+                fontSize:'0.7rem', cursor:'pointer', fontFamily:"'DM Sans', sans-serif",
+                display:'flex', alignItems:'center', justifyContent:'center',
+              }}>{p}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SECTION KYC
+// ─────────────────────────────────────────────────────────────────
+function KycPage() {
+  const [filter,   setFilter]   = useState('pending')
+  const [dossiers, setDossiers] = useState(KYC_DATA)
+  const [selected, setSelected] = useState(null)
+  const [rejectNote, setRejectNote] = useState('')
+
+  const pending   = dossiers.filter(d=>d.status==='pending').length
+  const validated = dossiers.filter(d=>d.status==='validated').length
+  const rejected  = dossiers.filter(d=>d.status==='rejected').length
+
+  const filtered = filter === 'all' ? dossiers : dossiers.filter(d => d.status === filter)
+
+  const handleValidate = id => {
+    setDossiers(p => p.map(d => d.id===id ? {...d, status:'validated'} : d))
+    if (selected?.id === id) setSelected(s => ({...s, status:'validated'}))
+  }
+  const handleReject = id => {
+    setDossiers(p => p.map(d => d.id===id ? {...d, status:'rejected'} : d))
+    if (selected?.id === id) setSelected(s => ({...s, status:'rejected'}))
+    setRejectNote('')
+  }
+
+  return (
+    <div>
+      {/* Header */}
+      <div style={{ marginBottom:18 }}>
+        <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize:'1.1rem', fontWeight:700, color:'#1A1A1A', margin:'0 0 2px' }}>
+          Gestion KYC
+        </h2>
+        <p style={{ fontSize:'0.68rem', color:'#8C8278', margin:0 }}>
+          {pending} dossier(s) en attente de validation
+        </p>
+      </div>
+
+      {/* KPIs */}
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12, marginBottom:20 }}>
+        <AdminKpi label="En attente" value={pending}   color="#8B6E1A" />
+        <AdminKpi label="Validés"    value={validated} color="#1E3A2F" />
+        <AdminKpi label="Rejetés"    value={rejected}  color="#C0392B" />
+      </div>
+
+      {/* Layout liste + détail */}
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 340px', gap:16, alignItems:'start' }}>
+        {/* Liste */}
+        <div>
+          {/* Tabs */}
+          <div style={{
+            display:'flex', background:'#fff', borderRadius:10, padding:4,
+            gap:3, marginBottom:14, width:'fit-content',
+            border:'1px solid rgba(30,58,47,0.08)',
+          }}>
+            {[
+              { id:'pending',   label:`En attente (${pending})`  },
+              { id:'validated', label:`Validés (${validated})`   },
+              { id:'rejected',  label:`Rejetés (${rejected})`    },
+              { id:'all',       label:'Tous'                      },
+            ].map(tab => (
+              <button key={tab.id} onClick={() => setFilter(tab.id)} style={{
+                padding:'6px 14px', borderRadius:8, border:'none', cursor:'pointer',
+                background: filter===tab.id ? '#1E3A2F' : 'transparent',
+                color: filter===tab.id ? '#F5F0E8' : '#8C8278',
+                fontSize:'0.72rem', fontWeight:600,
+                fontFamily:"'DM Sans', sans-serif", transition:'all 0.2s',
+              }}>{tab.label}</button>
+            ))}
+          </div>
+
+          {/* Cards */}
+          <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
+            {filtered.map(d => (
+              <div key={d.id} onClick={() => setSelected(d)} style={{
+                background: selected?.id===d.id ? 'rgba(30,58,47,0.04)' : '#fff',
+                borderRadius:12, padding:'14px 16px',
+                border:`1.5px solid ${selected?.id===d.id ? '#1E3A2F' : 'rgba(30,58,47,0.07)'}`,
+                cursor:'pointer', transition:'all 0.18s',
+                display:'flex', alignItems:'center', gap:12,
+              }}
+              onMouseEnter={e => { if(selected?.id!==d.id) { e.currentTarget.style.borderColor='rgba(30,58,47,0.2)' }}}
+              onMouseLeave={e => { if(selected?.id!==d.id) { e.currentTarget.style.borderColor='rgba(30,58,47,0.07)' }}}>
+                <div style={{
+                  width:38, height:38, borderRadius:'50%', flexShrink:0,
+                  background:`hsl(${(d.id*67)%360},40%,35%)`,
+                  display:'flex', alignItems:'center', justifyContent:'center',
+                  fontSize:'0.65rem', fontWeight:700, color:'#F5F0E8',
+                }}>
+                  {d.name.split(' ').map(n=>n[0]).join('').slice(0,2)}
+                </div>
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ display:'flex', alignItems:'center', gap:6, marginBottom:2 }}>
+                    <p style={{ fontSize:'0.8rem', fontWeight:600, color:'#1A1A1A', margin:0 }}>{d.name}</p>
+                    <span style={{ fontFamily:'monospace', fontSize:'0.62rem', color:'#8C8278' }}>{d.ref}</span>
+                  </div>
+                  <p style={{ fontSize:'0.68rem', color:'#8C8278', margin:0 }}>
+                    {d.country} · {d.type} · {d.submitted}
+                  </p>
+                </div>
+                <span style={{
+                  padding:'3px 9px', borderRadius:20, fontSize:'0.62rem', fontWeight:600, whiteSpace:'nowrap',
+                  background: d.status==='pending' ? 'rgba(184,151,42,0.1)' : d.status==='validated' ? 'rgba(30,58,47,0.08)' : 'rgba(192,57,43,0.08)',
+                  color: d.status==='pending' ? '#8B6E1A' : d.status==='validated' ? '#1E3A2F' : '#C0392B',
+                }}>
+                  {d.status==='pending' ? '⏳ Attente' : d.status==='validated' ? '✓ Validé' : '✗ Rejeté'}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Panneau détail */}
+        {selected ? (
+          <div style={{
+            background:'#fff', borderRadius:14, overflow:'hidden',
+            boxShadow:'0 4px 20px rgba(30,58,47,0.08)',
+            border:'1px solid rgba(30,58,47,0.08)',
+          }}>
+            <div style={{
+              background:'linear-gradient(135deg, #1E3A2F, #2D5241)',
+              padding:'16px 18px',
+              display:'flex', justifyContent:'space-between', alignItems:'flex-start',
+            }}>
+              <div>
+                <p style={{ fontSize:'0.6rem', color:'rgba(245,240,232,0.5)', textTransform:'uppercase', letterSpacing:'0.08em', margin:'0 0 3px' }}>
+                  Dossier KYC · {selected.ref}
+                </p>
+                <h3 style={{ fontFamily:"'Playfair Display', serif", fontSize:'1rem', fontWeight:700, color:'#F5F0E8', margin:0 }}>
+                  {selected.name}
+                </h3>
+              </div>
+              <button onClick={() => setSelected(null)} style={{
+                background:'rgba(245,240,232,0.1)', border:'1px solid rgba(245,240,232,0.15)',
+                borderRadius:7, width:26, height:26, display:'flex', alignItems:'center',
+                justifyContent:'center', cursor:'pointer', color:'rgba(245,240,232,0.7)',
+                fontSize:'0.8rem',
+              }}>✕</button>
+            </div>
+            <div style={{ padding:16 }}>
+              {[
+                { label:'Email',    value:selected.email    },
+                { label:'Pays',     value:selected.country  },
+                { label:'Document', value:selected.type     },
+                { label:'Soumis',   value:selected.submitted},
+              ].map(({ label, value }) => (
+                <div key={label} style={{
+                  display:'flex', justifyContent:'space-between',
+                  padding:'7px 0', fontSize:'0.75rem',
+                  borderBottom:'1px solid rgba(30,58,47,0.05)',
+                }}>
+                  <span style={{ color:'#8C8278' }}>{label}</span>
+                  <span style={{ fontWeight:600, color:'#1A1A1A', textAlign:'right', maxWidth:'60%' }}>{value}</span>
+                </div>
+              ))}
+              {/* Preview doc */}
+              <div style={{
+                marginTop:14, background:'#F5F0E8', borderRadius:10, padding:20,
+                textAlign:'center', border:'2px dashed rgba(30,58,47,0.15)',
+              }}>
+                <span style={{ fontSize:'2.5rem', display:'block', marginBottom:6 }}>🪪</span>
+                <p style={{ fontSize:'0.72rem', fontWeight:600, color:'#1E3A2F', margin:'0 0 2px' }}>{selected.type}</p>
+                <p style={{ fontSize:'0.65rem', color:'#8C8278', margin:'0 0 12px' }}>Document uploadé</p>
+                <button style={{
+                  padding:'6px 14px', borderRadius:7, border:'none',
+                  background:'#1E3A2F', color:'#F5F0E8',
+                  fontSize:'0.7rem', fontWeight:600, cursor:'pointer',
+                  fontFamily:"'DM Sans', sans-serif",
+                  display:'inline-flex', alignItems:'center', gap:5,
+                }}>👁 Voir le document</button>
+              </div>
+              {/* Actions si pending */}
+              {selected.status === 'pending' && (
+                <div style={{ marginTop:14 }}>
+                  <textarea
+                    value={rejectNote} onChange={e=>setRejectNote(e.target.value)}
+                    placeholder="Note de rejet (optionnel)..." rows={2}
+                    style={{
+                      width:'100%', padding:'9px 12px', borderRadius:9,
+                      border:'1.5px solid rgba(30,58,47,0.15)',
+                      fontSize:'0.75rem', color:'#4A3F35', outline:'none',
+                      resize:'none', marginBottom:10,
+                      fontFamily:"'DM Sans', sans-serif",
+                      background:'rgba(245,240,232,0.4)', boxSizing:'border-box',
+                    }}
+                  />
+                  <div style={{ display:'flex', gap:8 }}>
+                    <button onClick={() => handleReject(selected.id)} style={{
+                      flex:1, padding:'9px', borderRadius:9,
+                      background:'rgba(192,57,43,0.08)', border:'1.5px solid rgba(192,57,43,0.2)',
+                      color:'#C0392B', fontSize:'0.78rem', fontWeight:600,
+                      cursor:'pointer', fontFamily:"'DM Sans', sans-serif",
+                    }}>✗ Rejeter</button>
+                    <button onClick={() => handleValidate(selected.id)} style={{
+                      flex:1, padding:'9px', borderRadius:9, border:'none',
+                      background:'linear-gradient(135deg, #1E3A2F, #2D5241)',
+                      color:'#F5F0E8', fontSize:'0.78rem', fontWeight:600,
+                      cursor:'pointer', fontFamily:"'DM Sans', sans-serif",
+                    }}>✓ Valider</button>
+                  </div>
+                </div>
+              )}
+              {selected.status === 'validated' && (
+                <div style={{ marginTop:14, background:'rgba(30,58,47,0.05)', border:'1px solid rgba(30,58,47,0.1)', borderRadius:10, padding:12, textAlign:'center' }}>
+                  <p style={{ fontSize:'0.78rem', fontWeight:600, color:'#1E3A2F', margin:0 }}>✓ KYC validé — Compte actif</p>
+                </div>
+              )}
+              {selected.status === 'rejected' && (
+                <div style={{ marginTop:14, background:'rgba(192,57,43,0.05)', border:'1px solid rgba(192,57,43,0.12)', borderRadius:10, padding:12, textAlign:'center' }}>
+                  <p style={{ fontSize:'0.78rem', fontWeight:600, color:'#C0392B', margin:0 }}>✗ KYC rejeté</p>
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          <div style={{
+            background:'#fff', borderRadius:14, padding:32,
+            textAlign:'center', border:'1px solid rgba(30,58,47,0.06)',
+          }}>
+            <span style={{ fontSize:'3rem', display:'block', marginBottom:12 }}>👈</span>
+            <p style={{ fontSize:'0.8rem', color:'#8C8278', margin:0 }}>
+              Sélectionnez un dossier pour voir les détails
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+
+
+
 function PlaceholderPage({ emoji, label }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, minHeight: 400 }}>
@@ -1020,10 +1927,13 @@ export default function AdminDashboard() {
           padding: isMobile ? '16px 14px 80px' : '20px',
           background: C.bg,
         }}>
-          {active === 'dashboard'
-            ? <DashboardPage isMobile={isMobile} />
-            : <PlaceholderPage {...placeholders[active]} />
-          }
+             {active === 'dashboard'    && <DashboardPage isMobile={isMobile} />}
+             <p style={{color:'red', fontSize:'0.8rem'}}>active = "{active}"</p>
+             {active === 'users' && <UsersPage />}
+             {active === 'terrains'     && <TerrainsPage />}
+             {active === 'transactions' && <TransactionsPage />}
+             {active === 'kyc'          && <KycPage />}
+             {active === 'statistiques' && <PlaceholderPage emoji="📊" label="Statistiques & Rapports" />}
         </main>
       </div>
 
